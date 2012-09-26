@@ -1,0 +1,58 @@
+1. right click on group name =>rabbit snv => checkout =>fill url n it will get mounted with google repo
+
+2.updates from repo -  right click n update... files in repo will get updated.
+
+3. we can use commit and all members can see the updated changes on server by using update command.
+
+4. adding folders should be done under testing folder.
+
+Make 
+a.c a.h
+gcc -c a.c -o a.o
+b.c b.h
+gcc -c b.c -o b.o
+
+
+b.o depends on b.c, b.h, a.h
+
+
+a.o: a.c a.h
+	gcc -c a.c
+b.o: b.c b.h a.h
+	gcc -c b.c
+
+make -f MakeFile
+//Makefile should be named exaclty this way and it should be in the folder containing all c files...
+//b.c include b.h
+//a.c include a.h
+//a.h - some func
+//b.h some struct
+
+//in make file
+ 
+
+
+a.o: a.c a.h
+	gcc -c a.c
+b.o: b.c b.h a.h
+	gcc -c b.c
+
+e.o: e.c e.h b.c
+	gcc -c e.c e.h 
+finalout: a.o b.o
+	gcc a.o b.o -o finalout
+
+
+In termainal,type -  make
+
+make finalout
+
+//make a change in a.c
+
+int x=7;
+int a=9;
+
+when u say make again, only the complied/changed code gets executed... Avoids overhead...
+
+
+
