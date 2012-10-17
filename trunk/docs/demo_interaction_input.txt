@@ -1,0 +1,9 @@
+createvfs demo 1024
+mountvfs demo
+unmountvfs demo
+mountvfs demo
+makedir /home/sub1 sub2
+listdir /home 0 listdiroutput
+unmountvfs demo
+mountvfs demo
+listdir /home 0 listdiroutput
